@@ -3,4 +3,24 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+const rewrites = async () => {
+  return [
+    {
+      source: '/:path*',
+      destination: 'http://localhost:4000/:path*',
+    },
+  ];
+};
+
+const images = {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'loremflickr.com',
+      port: '',
+      pathname: '/590/**',
+    },
+  ],
+};
+
+module.exports = { nextConfig, rewrites, images };

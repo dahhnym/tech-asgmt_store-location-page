@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { MEDIA_QUERY_END_POINT } from '../constants';
 
 const StoreInfoContainer = styled.section`
   display: grid;

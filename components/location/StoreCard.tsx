@@ -1,33 +1,23 @@
 import styled from '@emotion/styled';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
+import { StoreData } from '../../pages/location';
 import CONTACT from './../../public/icon/contact.svg';
 
-interface StoreCardProps {
-  storeIdx: number;
-  storeName: string;
-  mainAddress: string;
-  contact: string;
-  image: StaticImageData;
-}
-
-const StoreCard: React.FC<StoreCardProps> = data => {
+const StoreCard: React.FC<StoreData> = data => {
+  const { contact, detailAdderss, mainAddress, region, storeImage, storeName } =
+    data;
   return (
     <div>
       <ImgWrapper>
-        <Image
-          src={data.image}
-          alt={data.storeName}
-          fill={true}
-          placeholder="blur"
-        />
+        <Image src={storeImage} alt={storeName} fill={true} />
       </ImgWrapper>
       <StoreInfoContainer>
-        <Name>{data.storeName}</Name>
-        <Addr>{data.mainAddress}</Addr>
+        <Name>{storeName}</Name>
+        <Addr>{`${mainAddress} ${detailAdderss}`}</Addr>
         <Contact>
           <Image src={CONTACT} alt="전화" width={'20'} />
-          <span>{data.contact}</span>
+          <span>{contact}</span>
         </Contact>
       </StoreInfoContainer>
     </div>
