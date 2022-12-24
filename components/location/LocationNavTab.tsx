@@ -1,31 +1,36 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { MEDIA_QUERY_END_POINT } from '../../constants';
+import { LOCATION, MEDIA_QUERY_END_POINT, REGION } from '../../constants';
+import { useState } from 'react';
 
 const LocationNavTab = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const onTabClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    const value = e.currentTarget.value;
+    setActiveIdx(value);
+    if (isActive) {
+      return;
+    }
+    setIsActive(prev => !prev);
+  };
+
   return (
     <Nav>
       <ul>
-        <li>
-          <Link href="">전체</Link>
-        </li>
-        <li>
-          <Link href="">서울</Link>
-        </li>
-        <li>
-          <Link href="" className="tab_link">
-            경기
-          </Link>
-        </li>
-        <li>
-          <Link href="">대전/충청</Link>
-        </li>
-        <li>
-          <Link href="">전라</Link>
-        </li>
-        <li>
-          <Link href="">경상</Link>
-        </li>
+        {LOCATION.map(region => {
+          return (
+            <li key={region.id} onClick={e => onTabClick(e)} value={region.id}>
+              <Link
+                href=""
+                className={region.id === activeIdx && isActive ? 'active' : ''}
+              >
+                {region.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </Nav>
   );
@@ -46,6 +51,10 @@ const Nav = styled.nav`
       font-weight: bold;
       a {
         display: block;
+      }
+      a.active {
+        color: #fff;
+        background-color: #174882;
       }
     }
   }

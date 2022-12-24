@@ -34,7 +34,7 @@ const ImgWrapper = styled.div`
 
 const StoreInfoContainer = styled.ul`
   li {
-    line-height: 1.8rem;
+    line-height: 1.3rem;
   }
 `;
 
@@ -42,10 +42,12 @@ const Name = styled.li`
   font-weight: bold;
   font-size: 1rem;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Addr = styled.li`
   font-size: 0.875rem;
+  word-break: keep-all;
 `;
 
 const Contact = styled.li`

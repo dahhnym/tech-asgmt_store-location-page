@@ -18,7 +18,6 @@ const LocationPage = () => {
   const endpoint = '/stores';
 
   const { data: storeData, error, isLoading } = useStoreData(endpoint);
-  console.log('data', storeData);
 
   return (
     <div>
