@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MEDIA_QUERY_END_POINT } from '../constants';
 
 const Header = styled.header`
   display: flex;
@@ -6,7 +7,7 @@ const Header = styled.header`
   justify-content: center;
   padding: 0 2rem;
   height: 60px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     height: 52px;
   }
 `;
@@ -23,6 +24,9 @@ const Nav = styled.nav`
   ul {
     display: flex;
     justify-content: space-between;
+    li {
+      font-weight: bold;
+    }
   }
   @media screen and (max-width: 768px) {
     border: solid 1px violet;

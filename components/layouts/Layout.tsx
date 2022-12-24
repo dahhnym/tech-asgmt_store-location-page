@@ -9,7 +9,7 @@ export const Layout = ({ children }: any) => {
   if (router.pathname === '/location') {
     title = '매장안내';
   } else {
-    title = '';
+    title = '알라카르테';
   }
 
   return (
@@ -25,10 +25,11 @@ const Title = styled.h1`
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 3.75rem;
+  margin: 3.75rem 0;
 `;
 
 const Container = styled.main`
   max-width: 1280px;
   margin: auto;
+  padding: 0 2rem;
 `;

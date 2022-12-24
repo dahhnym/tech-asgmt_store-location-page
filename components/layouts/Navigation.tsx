@@ -1,6 +1,6 @@
 import * as S from './../header.style';
 import Image from 'next/image';
-import Logo from './../../public/assets/ala_logo.png';
+import Logo from './../../public/ala_logo.png';
 
 const Navigation = () => {
   return (
