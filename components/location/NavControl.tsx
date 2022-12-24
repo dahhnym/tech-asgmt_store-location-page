@@ -1,13 +1,25 @@
 import styled from '@emotion/styled';
+import { Dispatch, SetStateAction } from 'react';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import FilterButton from './FilterButton';
 import LocationNavTab from './LocationNavTab';
 
-const NavControl = () => {
+export type NavControlProps = {
+  setActiveTabName: Dispatch<SetStateAction<string>>;
+  activeTabName: string;
+};
+
+const NavControl: React.FC<NavControlProps> = ({
+  setActiveTabName,
+  activeTabName,
+}) => {
   return (
     <Wrapper>
       <FilterButton />
-      <LocationNavTab />
+      <LocationNavTab
+        setActiveTabName={setActiveTabName}
+        activeTabName={activeTabName}
+      />
     </Wrapper>
   );
 };

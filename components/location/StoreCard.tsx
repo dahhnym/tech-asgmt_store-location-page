@@ -5,8 +5,8 @@ import { StoreData } from '../../pages/location';
 import CONTACT from './../../public/icon/contact.svg';
 
 const StoreCard: React.FC<StoreData> = data => {
-  const { contact, detailAdderss, mainAddress, region, storeImage, storeName } =
-    data;
+  const { contact, detailAdderss, mainAddress, storeImage, storeName } = data;
+
   return (
     <div>
       <ImgWrapper>

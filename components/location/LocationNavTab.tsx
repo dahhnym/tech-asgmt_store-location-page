@@ -2,14 +2,17 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import { LOCATION, MEDIA_QUERY_END_POINT, REGION } from '../../constants';
 import { useState } from 'react';
+import { NavControlProps } from './NavControl';
 
-const LocationNavTab = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [activeIdx, setActiveIdx] = useState(0);
+const LocationNavTab: React.FC<NavControlProps> = ({
+  setActiveTabName,
+  activeTabName,
+}) => {
+  const [isActive, setIsActive] = useState(true);
 
-  const onTabClick = (e: React.MouseEvent<HTMLLIElement>) => {
-    const value = e.currentTarget.value;
-    setActiveIdx(value);
+  const onTabClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const value = e.currentTarget.innerText;
+    setActiveTabName(value);
     if (isActive) {
       return;
     }
@@ -21,10 +24,13 @@ const LocationNavTab = () => {
       <ul>
         {LOCATION.map(region => {
           return (
-            <li key={region.id} onClick={e => onTabClick(e)} value={region.id}>
+            <li key={`/${region.name}`}>
               <Link
                 href=""
-                className={region.id === activeIdx && isActive ? 'active' : ''}
+                className={
+                  region.name === activeTabName && isActive ? 'active' : ''
+                }
+                onClick={e => onTabClick(e)}
               >
                 {region.name}
               </Link>
