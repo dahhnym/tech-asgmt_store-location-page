@@ -6,9 +6,6 @@ const StoreInfoContainer = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 38px;
   min-width: 330px;
-  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-    /* display: none; */
-  }
 `;
 
 export { StoreInfoContainer };

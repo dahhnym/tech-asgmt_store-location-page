@@ -1,9 +1,10 @@
-import * as S from './LocationNavTab.style';
 import Link from 'next/link';
+import styled from '@emotion/styled';
+import { MEDIA_QUERY_END_POINT } from '../../constants';
 
 const LocationNavTab = () => {
   return (
-    <S.Nav>
+    <Nav>
       <ul>
         <li>
           <Link href="">전체</Link>
@@ -26,8 +27,29 @@ const LocationNavTab = () => {
           <Link href="">경상</Link>
         </li>
       </ul>
-    </S.Nav>
+    </Nav>
   );
 };
 
 export default LocationNavTab;
+
+const Nav = styled.nav`
+  margin-bottom: 2rem;
+  ul {
+    border: solid 1px #ededee;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    li {
+      height: 52px;
+      text-align: center;
+      line-height: 52px;
+      font-weight: bold;
+      a {
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    display: none;
+  }
+`;
