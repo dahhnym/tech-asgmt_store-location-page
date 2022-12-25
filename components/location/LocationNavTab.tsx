@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import { LOCATION, MEDIA_QUERY_END_POINT } from '../../constants';
-import { useState, useEffect, useCallback } from 'react';
+import { LOCATION } from '../../constants';
+import { useState, useEffect } from 'react';
 import { NavControlProps } from './NavControl';
 import ReactDOM, { createPortal } from 'react-dom';
 import Image from 'next/image';
@@ -37,6 +36,7 @@ const LocationNavTab: React.FC<Props> = ({
   };
 
   useEffect(() => {
+    setClientWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [clientWidth]);

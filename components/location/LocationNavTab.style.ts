@@ -30,6 +30,7 @@ const Nav = styled.nav<FilterProps>`
   }
   @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     position: absolute;
+    display: ${props => (props.isOpen ? 'block' : 'none')};
     @keyframes slideUp {
       from {
         bottom: -50px;
