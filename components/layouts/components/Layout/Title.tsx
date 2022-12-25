@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Back from './../../public/icon/goback.svg';
+import Back from './../../../../public/icon/goback.svg';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import { MEDIA_QUERY_END_POINT } from '../../../../constants';

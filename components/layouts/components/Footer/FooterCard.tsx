@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Link from 'next/link';
+import { MEDIA_QUERY_END_POINT } from '../../../../constants';
 
 type Props = {
   ID: number;
@@ -43,5 +44,16 @@ const Card = styled.article`
     font-size: 0.875rem;
     font-weight: 900;
     margin-top: 0.7rem;
+  }
+  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    p,
+    a {
+      display: none;
+    }
+    h3 {
+      font-size: 0.9rem;
+      font-weight: normal;
+      margin: 0;
+    }
   }
 `;

@@ -25,7 +25,7 @@ export const CUSTOMER_SERVICE = [
   },
 ];
 
-export const COPYRIGHT = '&copy; CAFE de JuRA all rights reserved.';
+export const COPYRIGHT = ' CAFE de JuRA all rights reserved.';
 
 export const FOOTER_TERMS = {
   ITEM_1: '회사소개',

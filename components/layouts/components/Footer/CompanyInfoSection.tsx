@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import Logo from './../../../../public/ala_logo.png';
 import { COPYRIGHT } from '../../../../constants/Footer';
+import { MEDIA_QUERY_END_POINT } from '../../../../constants';
 
 const CompanyInfoSection = () => {
   return (
@@ -38,7 +39,7 @@ const CompanyInfoSection = () => {
         </dl>
         <CopyrightContainer>
           <Image src={Logo} width={160} height={36} alt="" />
-          <p>{COPYRIGHT}</p>
+          <p>&copy;{COPYRIGHT}</p>
         </CopyrightContainer>
       </div>
     </Section>
@@ -58,12 +59,23 @@ const Section = styled.section`
     height: 100%;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+      flex-direction: column;
+      padding: 2rem 0;
+      dl div dt,
+      dl div dd {
+        color: #525252;
+      }
+    }
   }
   div.contact {
     display: flex;
     div {
       display: flex;
     }
+  }
+  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    height: 200px;
   }
 `;
 
@@ -72,5 +84,10 @@ const CopyrightContainer = styled.div`
   p {
     margin-top: 0.5rem;
     font-size: 0.875rem;
+  }
+  @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    img {
+      display: none;
+    }
   }
 `;
