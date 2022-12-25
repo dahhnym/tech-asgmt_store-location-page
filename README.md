@@ -94,6 +94,54 @@ http://localhost:3000/location
 - [x] header, footer 구현
 - [x] 필터 구현
 
+## 주요기능
+
+### SWR 이용하여 데이터 가져오기
+
+**useSWR** <br>
+
+- 클라이언트 사이드에서 data fetching 하는데 최적화되어있는 리액트훅 라이브러리
+- 기본적으로 loading, error, data 상태를 반환해서 쉽게 API 요청응답 상태에 따라 로직 처리를 할 수 있다.
+- SWR의 고유한 키를 갖고 있고 키를 캐싱해서 공유하여 자동으로 API 중복 요청을 하지 않게 한다.
+- 네트워크 연결이 끊어졌다가 다시 연결되거나 브라우저 탭을 스위치했을때 자동으로 refetch를 한다.
+
+**지역별 매장 데이터 보여주기** <br>
+filter를 이용해 유저가 클릭한 탭의 지역이름과 동일한 데이터만 `filteredData`에 담아 map을 사용해 `StoreCard` 컴포넌트를 렌더링함으로서 지역별 매장만 표시<br>
+https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/pages/location/index.tsx#L24-L37
+
+https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/pages/location/index.tsx#L48-L55
+
+### 필터 하단 탭 UI 구현
+
+리액트 `createPortal` 이용. html 문서의 상단에 필터 하단 탭을 렌더링할 div를 만들고 브라우저 width가 모바일 스크린 사이즈(768px) 이하일 경우 해당 div에 렌더<br>
+https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/pages/_document.tsx#L12-L16
+
+https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/components/location/LocationNavTab.tsx#L88-L96
+
+## 트러블슈팅
+
+### CORS 이슈
+
+**문제상황**
+
+서버 요청은 포트넘버 4000, 클라이언트는 포트넘버 3000으로 사용 중에 CORS 이슈 발생
+![Untitled](https://user-images.githubusercontent.com/74545780/209484697-8eaebc3b-d9c2-497a-ae6d-5c234775be92.png)
+
+**CORS(Cross-Origin Resource Sharing)**
+
+다른 출처의 리소스를 공유할 수 있는 것, SOP(Same Origin Policy)에서 허용하는 출처를 설정한다.
+
+- 여기서 출처란 프로토콜(http, https), host(domain), port를 의미. 하나라도 다르면 다른 출처로 인식한다
+
+서버에서 Origin Allow에 클라이언트에서 보내는 출처를 추가해야하지만 서버측에서 이러한 해결 불가능할 경우, 클라이언트 측에서 프록시 서버 설정하여 해결가능
+
+**해결방법**
+
+Next.js에서 제공하는 기능인 [Rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites) 사용하여 해결
+Rewrites는 proxy 처럼 기능한다.
+
+https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/next.config.js#L6-L13
+
 ## 데모
 
 ### 데스크탑
