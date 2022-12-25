@@ -1,3 +1,5 @@
+export const CONTENT_MAX_WIDTH = '1280px';
+
 export const MEDIA_QUERY_END_POINT = {
   MOBILE: '768px',
   DESKTOP: '1920px',

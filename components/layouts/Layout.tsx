@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Navigation from './Navigation';
 import styled from '@emotion/styled';
+import Footer from './Footer';
 
 export const Layout = ({ children }: any) => {
   const router = useRouter();
@@ -17,6 +18,7 @@ export const Layout = ({ children }: any) => {
       <Navigation />
       <Title>{title}</Title>
       <Container>{children}</Container>
+      <Footer />
     </div>
   );
 };
