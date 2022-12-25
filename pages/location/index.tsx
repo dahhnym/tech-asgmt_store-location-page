@@ -3,6 +3,8 @@ import StoreCard from '../../components/location/StoreCard';
 import { useStoreData } from '../../hooks/useStoreData';
 import { useState } from 'react';
 import styled from '@emotion/styled';
+import Head from 'next/head';
+import { PAGE_TITLE } from '../../constants';
 
 export type StoreData = {
   contact: string;
@@ -36,6 +38,9 @@ const LocationPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>A La Carte | {PAGE_TITLE.LOCATION}</title>
+      </Head>
       <NavControl
         setActiveTabName={setActiveTabName}
         activeTabName={activeTabName}

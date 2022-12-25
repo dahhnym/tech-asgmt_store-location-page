@@ -40,3 +40,8 @@ export const LOCATION = [
     name: REGION.REGION_5,
   },
 ];
+
+export const PAGE_TITLE = {
+  MAIN: '알라카르테',
+  LOCATION: '매장안내',
+};
