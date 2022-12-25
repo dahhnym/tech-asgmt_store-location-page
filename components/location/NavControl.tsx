@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import FilterButton from './FilterButton';
 import LocationNavTab from './LocationNavTab';
+import { useState } from 'react';
 
 export type NavControlProps = {
   setActiveTabName: Dispatch<SetStateAction<string>>;
@@ -13,12 +14,20 @@ const NavControl: React.FC<NavControlProps> = ({
   setActiveTabName,
   activeTabName,
 }) => {
+  const [isBottomTapOpen, setIsBottomTapOpen] = useState(false);
+
+  const filterClickHandler = () => {
+    setIsBottomTapOpen(prev => !prev);
+  };
+
   return (
     <Wrapper>
-      <FilterButton />
+      <FilterButton onFilterClick={filterClickHandler} />
       <LocationNavTab
         setActiveTabName={setActiveTabName}
         activeTabName={activeTabName}
+        isFilterOpen={isBottomTapOpen}
+        onCloseClick={filterClickHandler}
       />
     </Wrapper>
   );

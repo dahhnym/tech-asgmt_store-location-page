@@ -40,7 +40,7 @@ const LocationPage = () => {
         setActiveTabName={setActiveTabName}
         activeTabName={activeTabName}
       />
-      <StoreInfoContainer count={finalData.length}>
+      <StoreInfoContainer count={finalData?.length}>
         {isLoading && <p>Loading... </p>}
         {!isLoading &&
           finalData.map((item: StoreData) => {
@@ -61,7 +61,7 @@ const StoreInfoContainer = styled.section<StoreInfoContainerProp>`
       : 'repeat(3, 1fr)'};
   gap: 38px;
   min-width: 330px;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 900px) {
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 `;

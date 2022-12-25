@@ -3,9 +3,13 @@ import Image from 'next/image';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import Filter from './../../public/icon/filter.svg';
 
-const FilterButton = () => {
+type Props = {
+  onFilterClick: () => void;
+};
+
+const FilterButton: React.FC<Props> = ({ onFilterClick }) => {
   return (
-    <Button>
+    <Button type="button" onClick={onFilterClick}>
       필터
       <Image src={Filter} width="20" height="20" alt="" />
     </Button>
@@ -26,5 +30,6 @@ const Button = styled.button`
   }
   @media screen and (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     display: block;
+    width: 5rem;
   }
 `;
