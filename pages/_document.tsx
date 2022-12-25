@@ -3,7 +3,12 @@ import { Head, Html, Main, NextScript } from 'next/document';
 const Document = () => {
   return (
     <Html>
-      <Head />
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body>
         <div id="portal" />
         <Main />
