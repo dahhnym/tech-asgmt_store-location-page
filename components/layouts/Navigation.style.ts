@@ -13,12 +13,6 @@ const Header = styled.header`
   }
 `;
 
-const ImgContainer = styled.div`
-  position: relative; // Image 컴포넌트의 fill 속성 사용하기 위해 설정
-  min-width: 124px;
-  height: 28px;
-`;
-
 const Nav = styled.nav`
   width: 100%;
   margin-left: 2rem;
@@ -63,4 +57,4 @@ const Nav = styled.nav`
   }
 `;
 
-export { Header, ImgContainer, Nav };
+export { Header, Nav };
