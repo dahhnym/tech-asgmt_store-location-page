@@ -1,5 +1,17 @@
 # 프론트엔드 기술과제 - 매장안내 페이지
 
+> ## 목차<br>
+>
+> - [기간](#기간)
+> - [사용기술](#사용기술)
+> - [실행방법](#실행방법)
+> - [접속 URL](#접속-url)
+> - [디렉토리 구조](#디렉토리-구조)
+> - [요구사항](#요구사항)
+> - [주요기능](#주요기능)
+> - [트러블슈팅](#트러블슈팅)
+> - [데모](#데모)
+
 ## 기간
 
 2022-12-23 ~ 2022-12-26
@@ -137,7 +149,7 @@ https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a
 
 **해결방법**
 
-Next.js에서 제공하는 기능인 [Rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites) 사용하여 해결
+Next.js에서 제공하는 기능인 [Rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites) 사용하여 해결 <br>
 Rewrites는 proxy 처럼 기능한다.
 
 https://github.com/dahhnym/tech-asgmt_store-location-page/blob/533005acceaa1098a5dc7b7e77288f53e7105a26/next.config.js#L6-L13
