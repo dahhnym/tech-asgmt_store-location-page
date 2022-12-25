@@ -14,14 +14,18 @@ export const Layout = ({ children }: any) => {
   }
 
   return (
-    <div>
+    <Container>
       <Navigation />
       <Title>{title}</Title>
-      <Container>{children}</Container>
+      <ContentContainer>{children}</ContentContainer>
       <Footer />
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  min-width: 390px;
+`;
 
 const Title = styled.h1`
   font-size: 1.8rem;
@@ -30,7 +34,7 @@ const Title = styled.h1`
   margin: 3.75rem 0;
 `;
 
-const Container = styled.main`
+const ContentContainer = styled.main`
   max-width: 1280px;
   margin: auto;
   padding: 0 2rem;

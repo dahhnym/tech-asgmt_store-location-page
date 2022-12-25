@@ -24,3 +24,14 @@ export const CUSTOMER_SERVICE = [
       '제품의 정품등록을 통해 알라카르테에서 제공하는 서비스를 체험해 보실 수 있습니다.',
   },
 ];
+
+export const COPYRIGHT = '&copy; CAFE de JuRA all rights reserved.';
+
+export const FOOTER_TERMS = {
+  ITEM_1: '회사소개',
+  ITEM_2: ' 이용약관',
+  ITEM_3: '개인정보처리방침',
+  ITEM_4: '멤버십 약관',
+  ITEM_5: '공지사항',
+  ITEM_6: '고객센터',
+};
