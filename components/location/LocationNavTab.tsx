@@ -44,20 +44,18 @@ const LocationNavTab: React.FC<Props> = ({
     return () => window.removeEventListener('resize', handleResize);
   }, [clientWidth]);
 
-  const FilterTitle = (
-    <li className="title">
-      필터
-      <button type="button" onClick={onCloseClick}>
-        <Image src={Cancel} width="20" alt="닫기" />
-      </button>
-    </li>
-  );
-
   const NavTab = () => {
     return (
       <Nav isOpen={isFilterOpen}>
         <ul>
-          {FilterTitle}
+          {isFilterOpen && (
+            <li className="title">
+              필터
+              <button type="button" onClick={onCloseClick}>
+                <Image src={Cancel} width="20" alt="닫기" />
+              </button>
+            </li>
+          )}
           {LOCATION.map(region => {
             return (
               <li key={region.id}>
