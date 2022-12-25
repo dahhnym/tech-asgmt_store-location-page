@@ -39,7 +39,7 @@ const LocationPage = () => {
   return (
     <div>
       <Head>
-        <title>A La Carte | {PAGE_TITLE.LOCATION}</title>
+        <title>A La Carte | 매장안내</title>
       </Head>
       <NavControl
         setActiveTabName={setActiveTabName}
@@ -47,6 +47,7 @@ const LocationPage = () => {
       />
       <StoreInfoContainer count={finalData?.length}>
         {isLoading && <p>Loading... </p>}
+        {error && <p>데이터를 불러오는 도중 오류가 발생했습니다.</p>}
         {!isLoading &&
           finalData.map((item: StoreData) => {
             return <StoreCard key={item.storeIdx} {...item} />;
